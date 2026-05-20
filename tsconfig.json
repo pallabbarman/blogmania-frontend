@@ -21,6 +21,9 @@
         ],
         "paths": {
             "app/*": ["./src/app/*"],
+            "components/*": ["./src/components/*"],
+            "icons/*": ["./src/icons/*"],
+            "theme/*": ["./src/theme/*"],
             "types/*": ["./src/types/*"],
             "utils/*": ["./src/utils/*"]
         },
