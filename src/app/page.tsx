@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Divider, Typography } from '@mui/material';
 
 export default function Home() {
     return (
@@ -12,6 +12,7 @@ export default function Home() {
             <Typography variant="text1" component="div">
                 The European languages are members of the same family.
             </Typography>
+            <Divider />
             <Typography variant="text2" component="div">
                 The European languages are members of the same family. Their separate existence is a
                 myth. For science, music, sport, etc

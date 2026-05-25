@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
-import { createTheme, ThemeOptions } from '@mui/material/styles';
+import { createTheme, SimplePaletteColorOptions, ThemeOptions } from '@mui/material/styles';
 import { CSSProperties } from 'react';
 
 interface CustomTypographyVariants {
@@ -14,13 +14,37 @@ interface CustomTypographyVariants {
     caption: CSSProperties;
 }
 
+interface CustomColors {
+    black: SimplePaletteColorOptions;
+    white: SimplePaletteColorOptions;
+    gray: SimplePaletteColorOptions;
+    fieryRose: SimplePaletteColorOptions;
+    sunsetGlow: SimplePaletteColorOptions;
+    moonstone: SimplePaletteColorOptions;
+}
+
+interface CustomColorNames {
+    black: true;
+    white: true;
+    gray: true;
+    fieryRose: true;
+    sunsetGlow: true;
+    moonstone: true;
+}
+
 declare module '@mui/material/styles' {
+    interface Palette extends CustomColors {}
+
+    interface PaletteOptions extends CustomColors {}
+
     interface TypographyVariants extends CustomTypographyVariants {}
 
     interface TypographyVariantsOptions extends CustomTypographyVariants {}
 }
 
 declare module '@mui/material/Typography' {
+    interface TypographyPropsColorOverrides extends CustomColorNames {}
+
     interface TypographyPropsVariantOverrides {
         h1: true;
         h2: true;
@@ -97,6 +121,72 @@ const themeOptions: ThemeOptions = {
             fontSize: 12,
             fontWeight: 400,
             lineHeight: 18 / 12,
+        },
+    },
+    colorSchemes: {
+        light: {
+            palette: {
+                black: {
+                    main: '#000000',
+                },
+                white: {
+                    main: '#ffffff',
+                },
+                gray: {
+                    main: '#ebebeb',
+                },
+                fieryRose: {
+                    main: '#FE4F70',
+                },
+                sunsetGlow: {
+                    main: 'linear-gradient(to right, #FE4F70 0%, #FFA387 51%, #FE4F70 100%)',
+                },
+                moonstone: {
+                    main: '#F1F8FF',
+                },
+                primary: {
+                    main: '#203656',
+                },
+                secondary: {
+                    main: '#8F9BAD',
+                },
+                background: {
+                    paper: '#ffffff',
+                    default: '#ffffff',
+                },
+            },
+        },
+        dark: {
+            palette: {
+                black: {
+                    main: '#000000',
+                },
+                white: {
+                    main: '#ffffff',
+                },
+                gray: {
+                    main: '#ebebeb',
+                },
+                fieryRose: {
+                    main: '#FE4F70',
+                },
+                sunsetGlow: {
+                    main: 'linear-gradient(to right, #FE4F70 0%, #FFA387 51%, #FE4F70 100%)',
+                },
+                moonstone: {
+                    main: '#F1F8FF',
+                },
+                primary: {
+                    main: '#ffffff',
+                },
+                secondary: {
+                    main: '#8F9BAD',
+                },
+                background: {
+                    paper: '#142030',
+                    default: '#142030',
+                },
+            },
         },
     },
 };
